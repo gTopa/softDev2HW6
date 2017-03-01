@@ -1,4 +1,5 @@
 var svg=document.getElementById("vimage");
+var button=document.getElementById("clear");
 var x=-1
 var y=-1
 var makeCircle = function(e) {
@@ -26,4 +27,12 @@ var makeCircle = function(e) {
     y=mouseY;
 };
 
+var clear = function(e){
+    while(svg.lastChild){
+	svg.removeChild(svg.lastChild);
+    };
+    x=-1;
+};
+
 svg.addEventListener("click", makeCircle);
+button.addEventListener("click", clear);
